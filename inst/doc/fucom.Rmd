@@ -1,0 +1,65 @@
+---
+title: "Using the Full Consistency Method (FUCOM) for Multi-Criteria Decision-Making"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to the FUCOM Method for MCDM}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+```
+
+## Introduction
+
+The Full Consistency Method (FUCOM) is a Multi-Criteria Decision-Making (MCDM) method developed to determine the optimal weights of criteria, ensuring that the deviation from full consistency is minimized. This vignette provides a step-by-step guide on how to use the fucom package to apply the FUCOM method and interpret the results.
+
+
+
+Example: Applying the FUCOM Method
+
+Below is an example demonstrating how to apply the FUCOM method using the fucom package to calculate optimized weights for a set of criteria.
+
+
+First, define the criteria to be evaluated, along with their respective ranks and priorities. In this example, we are evaluating eight criteria with the following priority values:
+criteria_rank <- c ("Criterion 1", "Criterion 2", "Criterion 3", "Criterion 4", "Criterion 5", "Criterion 6", "Criterion 7", "Criterion 8")
+criteria_priority <- c (1, 1, 1, 2, 4, 4, 4, 4)
+
+
+```{r install}
+library(fucom)
+
+criteria_rank <- c("Criterion 1", "Criterion 2", "Criterion 3", 
+                   "Criterion 4", "Criterion 5", "Criterion 6", 
+                   "Criterion 7", "Criterion 8")
+
+criteria_priority <- c(1, 1, 1, 2, 4, 4, 4, 4)
+
+results <- fucom_method(criteria_rank, criteria_priority)
+
+# Display the results
+results$weights  # Optimized weights
+results$Phi      # Comparative priority (Phi) values
+results$w        # Mathematical transitivity condition (w)
+results$DFC      # Minimum deviation from full consistency (DFC)
+
+```
+Interpret the Results
+
+The output includes:
+
+    Weights: Optimized weights for each criterion, where the sum equals 1.
+    Phi Values: Comparative priority values between the criteria.
+    Transitivity Condition (w): Ensures the consistency of the comparative priorities.
+    DFC: The deviation from full consistency, which should be minimized.
+
+Conclusion
+
+This vignette demonstrated how to use the fucom package to apply the FUCOM method in multi-criteria decision-making. By optimizing the weights of criteria based on their priorities, the method ensures consistency in the decision-making process.
+
+For more detailed information on the FUCOM method, you can refer to the original paper: https://doi.org/10.3390/sym10090393.

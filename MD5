@@ -1,0 +1,13 @@
+9aa619f9a303b0fc4010daccd822e073 *DESCRIPTION
+edeebc2ee5be8aa3ded2353bc1dd3134 *NAMESPACE
+c0be72229844952818159bb371ce712e *R/fucom.R
+50daf36c34aea34825d51e4591036d66 *README.md
+96706bf6b282d8d1d082c1c552532206 *build/vignette.rds
+f29a65c307ae47b06e16b827de59829e *inst/WORDLIST
+16815df2eed4c373d2f6b1361af17a65 *inst/doc/fucom.R
+a935f8933341838b481dee8f44658fe1 *inst/doc/fucom.Rmd
+92fc043f222c3b4cda3f6265fd9765e9 *inst/doc/fucom.html
+e18df7044296f67e2c64f7e106df52f9 *man/fucom_method.Rd
+ddf62f262465452862d5fb820aaf092f *tests/testthat.R
+87c2528ccae73e2ca8707994fb9d3957 *tests/testthat/test-fucom.R
+a935f8933341838b481dee8f44658fe1 *vignettes/fucom.Rmd
