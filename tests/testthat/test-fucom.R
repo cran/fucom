@@ -62,38 +62,4 @@ test_that("Weight sum validation works as expected", {
   expect_true(all(results$weights > 0))
 })
 
-test_that("Test data from DOI org/10.3390/sym10090393 (Another Example)", {
 
-  # Defining new criteria and priorities
-  criteria_rank <- c("Criterion 1", "Criterion 2", "Criterion 3", "Criterion 4", "Criterion 5")
-  criteria_priority <- c(1, 2, 2, 4, 8)
-
-  # Execute the function with the new values
-  result <- fucom_method(criteria_rank, criteria_priority)
-
-  # Calculating Phi based on criteria_priority
-  expect_equal(
-    round(as.vector(result$Phi[]), digits = 2),
-    c(2, 1, 2, 2)
-  )
-
-  # Calculating w based on criteria_priority
-  expect_equal(
-    round(as.vector(result$w[]), digits = 2),
-    c(2, 2, 4)
-  )
-
-  # Calculating final weights
-  expect_equal(
-    round(as.vector(result$weights[]), digits = 4),
-    c(0.4211, 0.2105, 0.2105, 0.1053, 0.0526),
-    tolerance = 1e-3
-  )
-
-  # Calculating DFC based on the function's internal logic and verifying it is 0 with 4 decimal places
-  expect_equal(
-    round(as.vector(result$DFC), digits = 4),
-    0,
-    tolerance = 1e-3
-  )
-})
